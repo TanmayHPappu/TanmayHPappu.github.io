@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tanmay Haolader | Software Engineer &amp; Project Manager</title>
+<meta name="description" content="Tanmay Haolader: Assistant Project Manager and Software Engineer working across SaaS, e-commerce and ERP.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f8fb; --surface:#ffffff; --surface-2:#eef0f6; --text:#14171f; --muted:#5b6475;
+  --border:#dfe3ec; --accent:#4f46e5; --accent-2:#0d9488; --accent-soft:rgba(79,70,229,.1);
+  --shadow:0 1px 2px rgba(20,23,31,.05),0 8px 24px rgba(20,23,31,.06);
+  --nav-bg:rgba(247,248,251,.8);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0b0d12; --surface:#12151c; --surface-2:#1a1e28; --text:#e8eaf0; --muted:#98a1b3;
+    --border:#252a36; --accent:#8b8cff; --accent-2:#2dd4bf; --accent-soft:rgba(139,140,255,.14);
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+    --nav-bg:rgba(11,13,18,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0b0d12; --surface:#12151c; --surface-2:#1a1e28; --text:#e8eaf0; --muted:#98a1b3;
+  --border:#252a36; --accent:#8b8cff; --accent-2:#2dd4bf; --accent-soft:rgba(139,140,255,.14);
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+  --nav-bg:rgba(11,13,18,.8);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:'Inter',system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.mono{font-family:'JetBrains Mono',ui-monospace,Consolas,monospace}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;background:var(--nav-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;letter-spacing:-.02em;font-size:1.05rem}
+.logo span{color:var(--accent)}
+.links{display:flex;align-items:center;gap:6px}
+.links a{padding:8px 12px;border-radius:8px;font-size:.9rem;color:var(--muted);font-weight:500;transition:.2s}
+.links a:hover,.links a.active{color:var(--text);background:var(--surface-2)}
+.icon-btn{width:38px;height:38px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;display:grid;place-items:center;font-size:1rem}
+.icon-btn:hover{border-color:var(--accent)}
+.burger{display:none}
+.nav-right{display:flex;gap:8px;align-items:center}
+
+/* hero */
+.hero{padding:88px 0 72px;position:relative}
+.hero::before{content:"";position:absolute;inset:-120px 0 auto 0;height:520px;background:radial-gradient(60% 60% at 70% 0%,var(--accent-soft),transparent 70%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.4fr .8fr;gap:48px;align-items:center;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;color:var(--accent-2);border:1px solid var(--border);background:var(--surface);padding:6px 12px;border-radius:999px;margin-bottom:22px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 0 0 var(--accent-2);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+h1{font-size:clamp(2.2rem,6vw,3.8rem);line-height:1.08;letter-spacing:-.035em;font-weight:800}
+h1 .grad{background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{margin-top:14px;font-size:1.15rem;color:var(--muted);font-weight:500}
+.tag{margin-top:18px;max-width:54ch;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;font-weight:600;font-size:.95rem;border:1px solid var(--border);background:var(--surface);transition:.2s;cursor:pointer}
+.btn:hover{transform:translateY(-2px);border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.primary:hover{filter:brightness(1.1)}
+.photo{position:relative;max-width:340px;width:100%;justify-self:center}
+.photo::before{content:"";position:absolute;inset:14px -14px -14px 14px;border-radius:24px;background:linear-gradient(135deg,var(--accent),var(--accent-2));opacity:.35}
+.photo img{position:relative;display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border-radius:24px;border:1px solid var(--border);box-shadow:var(--shadow)}
+.photo .badge{position:absolute;left:14px;bottom:14px;font-size:.75rem;padding:7px 12px;border-radius:999px;background:var(--nav-bg);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--border);color:var(--text)}
+
+/* sections */
+section{padding:72px 0}
+.sec-head{margin-bottom:36px}
+.sec-head .num{font-size:.8rem;color:var(--accent);display:block;margin-bottom:6px}
+.sec-head h2{font-size:clamp(1.6rem,4vw,2.2rem);letter-spacing:-.025em;font-weight:800}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;box-shadow:var(--shadow)}
+.about{display:grid;grid-template-columns:1.5fr 1fr;gap:24px}
+.about p+p{margin-top:14px}
+.about p{color:var(--muted)}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat{background:var(--surface-2);border-radius:12px;padding:16px}
+.stat b{display:block;font-size:1.6rem;letter-spacing:-.02em;color:var(--accent)}
+.stat span{font-size:.8rem;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:.82rem;padding:6px 12px;border-radius:999px;background:var(--surface-2);border:1px solid var(--border);color:var(--text);transition:.2s}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+.chip.hot{background:var(--accent-soft);border-color:transparent;color:var(--accent);font-weight:600}
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.skills h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:14px;font-weight:600}
+
+/* timeline */
+.timeline{position:relative;padding-left:28px}
+.timeline::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:var(--border)}
+.job{position:relative;margin-bottom:22px}
+.job::before{content:"";position:absolute;left:-28px;top:26px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.job-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;margin-bottom:10px}
+.job h3{font-size:1.08rem;letter-spacing:-.01em}
+.job h3 em{font-style:normal;color:var(--accent)}
+.when{font-size:.78rem;color:var(--muted)}
+.job li{position:relative;padding-left:18px;margin-top:7px;color:var(--muted);font-size:.93rem}
+.job li::before{content:"›";position:absolute;left:2px;color:var(--accent);font-weight:700}
+
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.proj{display:flex;flex-direction:column;gap:10px;transition:.25s}
+.proj:hover{transform:translateY(-4px);border-color:var(--accent)}
+.proj .ic{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);font-size:1.1rem}
+.proj h3{font-size:1rem}
+.proj p{font-size:.88rem;color:var(--muted)}
+.proj .tagline{margin-top:auto;font-size:.72rem;color:var(--accent-2)}
+
+/* education */
+.edu{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.edu h3{font-size:1rem;margin-bottom:4px}
+.edu p{font-size:.88rem;color:var(--muted)}
+.gpa{display:inline-block;margin-top:10px;font-size:.78rem;color:var(--accent);background:var(--accent-soft);padding:3px 10px;border-radius:999px}
+
+/* contact */
+.contact{text-align:center;padding:48px 24px}
+.contact h2{font-size:clamp(1.6rem,4vw,2.2rem);letter-spacing:-.025em;font-weight:800}
+.contact p{color:var(--muted);margin:12px auto 26px;max-width:48ch}
+.contact .cta{justify-content:center}
+footer{padding:32px 0 48px;text-align:center;font-size:.82rem;color:var(--muted)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;transition:none}
+  .dot{animation:none}
+}
+
+/* responsive */
+@media (max-width:860px){
+  .hero-grid,.about{grid-template-columns:1fr}
+  .projects,.edu{grid-template-columns:repeat(2,1fr)}
+  .hero{padding-top:56px}
+}
+@media (max-width:640px){
+  .burger{display:grid}
+  .links{position:absolute;top:64px;left:0;right:0;flex-direction:column;align-items:stretch;background:var(--bg);border-bottom:1px solid var(--border);padding:10px 20px 16px;display:none}
+  .links.open{display:flex}
+  .links a{padding:12px}
+  .skills,.projects,.edu{grid-template-columns:1fr}
+  section{padding:52px 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo mono">tanmay<span>.</span>dev</a>
+    <nav class="links" id="links" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">◐</button>
+      <button class="icon-btn burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div class="rv">
+      <span class="eyebrow mono"><i class="dot"></i> Open to conversations</span>
+      <h1>Hi, I'm <span class="grad">Tanmay Haolader</span></h1>
+      <p class="role">Assistant Project Manager · Software Engineer</p>
+      <p class="tag">I turn product requirements into shipped software. Hands-on engineering depth across SaaS, e-commerce and ERP, combined with team coordination and delivery.</p>
+      <div class="cta">
+        <a class="btn primary" href="#contact">Get in touch →</a>
+        <a class="btn" href="Tanmay_Haolader_CV.pdf" download>Download CV</a>
+        <a class="btn" href="https://github.com/TanmayHPappu" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="photo rv">
+      <img src="tanmay.jpg" alt="Tanmay Haolader" width="800" height="946">
+      <span class="badge mono">Softsurgeon · Asst. PM</span>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="num mono">01 / about</span><h2>About me</h2></div>
+    <div class="about">
+      <div class="card rv">
+        <p>Technology professional with extensive experience across software engineering, e-commerce platforms, system design, team coordination and project delivery. Currently an Assistant Project Manager at Softsurgeon, supporting SaaS, e-commerce and ERP projects.</p>
+        <p>I combine hands-on engineering knowledge with project coordination, task planning, team follow-up, technical communication and product-focused thinking. My career spans software development, system analysis and e-commerce platforms, and has grown into project management.</p>
+        <p>Professional interests: Software Architecture, Artificial Intelligence, Cryptography, Web System Security and Digital Products.</p>
+      </div>
+      <div class="card rv">
+        <div class="stat-grid">
+          <div class="stat"><b>10+</b><span>Years in software</span></div>
+          <div class="stat"><b>4</b><span>Team members coordinated</span></div>
+          <div class="stat"><b>10+</b><span>Projects delivered</span></div>
+          <div class="stat"><b>2</b><span>Languages: EN · BN</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="num mono">02 / skills</span><h2>Skills &amp; tools</h2></div>
+    <div class="skills">
+      <div class="card rv">
+        <h3>Current / Recent</h3>
+        <div class="chips">
+          <span class="chip hot">PostgreSQL</span><span class="chip hot">Next.js</span><span class="chip hot">Node.js</span><span class="chip hot">GitHub</span><span class="chip hot">Slack</span>
+        </div>
+      </div>
+      <div class="card rv">
+        <h3>Previous</h3>
+        <div class="chips">
+          <span class="chip">PHP / MySQL</span><span class="chip">Laravel</span><span class="chip">Java</span><span class="chip">Spring Framework</span><span class="chip">JavaScript</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">jQuery</span><span class="chip">Ajax</span><span class="chip">jQuery Mobile</span><span class="chip">XML</span><span class="chip">MEAN Stack</span>
+        </div>
+      </div>
+      <div class="card rv">
+        <h3>Engineering</h3>
+        <div class="chips">
+          <span class="chip">System Design</span><span class="chip">Software Architecture</span><span class="chip">Code Review</span><span class="chip">Web Development</span><span class="chip">E-commerce Systems</span><span class="chip">Basic Web Security</span>
+        </div>
+      </div>
+      <div class="card rv">
+        <h3>Management</h3>
+        <div class="chips">
+          <span class="chip">Project Coordination &amp; Delivery</span><span class="chip">Task Planning &amp; Follow-up</span><span class="chip">Team Coordination</span><span class="chip">Requirement Analysis</span><span class="chip">Technical Documentation</span><span class="chip">Stakeholder Communication</span><span class="chip">Process Improvement</span>
+        </div>
+      </div>
+      <div class="card rv" style="grid-column:1/-1">
+        <h3>Other</h3>
+        <div class="chips">
+          <span class="chip">Office Applications</span><span class="chip">PC Hardware Assembly</span><span class="chip">Network Configuration &amp; Management</span><span class="chip">Embedded Projects</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="num mono">03 / experience</span><h2>Professional experience</h2></div>
+    <div class="timeline">
+      <div class="job card rv">
+        <div class="job-top"><h3>Assistant Project Manager <em>@ Softsurgeon</em></h3><span class="when mono">2024 – Present</span></div>
+        <ul>
+          <li>Coordinate day-to-day project activities across SaaS, e-commerce and ERP initiatives.</li>
+          <li>Assign and follow up on development tasks while coordinating a team of about four members.</li>
+          <li>Support project planning, execution, progress tracking and delivery.</li>
+          <li>Bridge project requirements and implementation teams, applying working knowledge of PostgreSQL, Next.js and Node.js.</li>
+          <li>Use Slack for team communication and GitHub for development workflow and collaboration.</li>
+          <li>Worked on Bhuiyamart within the broader e-commerce technology environment.</li>
+        </ul>
+      </div>
+      <div class="job card rv">
+        <div class="job-top"><h3>Sr. Software Engineer <em>@ DevTech Guru LTD.</em></h3><span class="when mono">Nov 2021 – Present · Dhaka</span></div>
+        <ul>
+          <li>Assigned and coordinated development tasks within the engineering team; worked on system design and software architecture.</li>
+          <li>Improved e-commerce product-matching functionality using algorithms.</li>
+          <li>Enhanced and maintained an e-commerce platform on the MEAN stack.</li>
+          <li>Conducted peer code reviews and documented changes per organizational change protocols.</li>
+          <li>Partnered with five interns on user stories and reported goals and progress to the CTO.</li>
+        </ul>
+      </div>
+      <div class="job card rv">
+        <div class="job-top"><h3>Software &amp; Web Developer <em>@ SP Wave</em></h3><span class="when mono">Feb 2016 – Mar 2020 · Dhaka</span></div>
+        <ul>
+          <li>Gathered functional and technical requirements with stakeholders.</li>
+          <li>Contributed to software design, development, system analysis and site management.</li>
+          <li>Facilitated software upgrade releases and supported ongoing application development across multiple projects.</li>
+        </ul>
+      </div>
+      <div class="job card rv">
+        <div class="job-top"><h3>Software Development Intern <em>@ SP Wave</em></h3><span class="when mono">Jan – Mar 2012 · Dhaka</span></div>
+        <ul>
+          <li>Shadowed senior team members and learned day-to-day development practices.</li>
+          <li>Completed small development projects and presented them to leadership.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="num mono">04 / projects</span><h2>Selected projects</h2></div>
+    <div class="projects">
+      <div class="card proj rv"><div class="ic">🛒</div><h3>Bhuiyamart</h3><p>E-commerce project/product experience at Softsurgeon.</p><span class="tagline mono">E-commerce</span></div>
+      <div class="card proj rv"><div class="ic">🧩</div><h3>E-commerce Platform</h3><p>MEAN-stack based e-commerce platform enhancement and maintenance.</p><span class="tagline mono">MEAN · E-commerce</span></div>
+      <div class="card proj rv"><div class="ic">⚙️</div><h3>AFCS</h3><p>Software development project.</p><span class="tagline mono">Software</span></div>
+      <div class="card proj rv"><div class="ic">📦</div><h3>Inventory Management System</h3><p>Inventory and stock management software.</p><span class="tagline mono">Inventory</span></div>
+      <div class="card proj rv"><div class="ic">📊</div><h3>Smart Stock</h3><p>Stock management software.</p><span class="tagline mono">Inventory</span></div>
+      <div class="card proj rv"><div class="ic">💳</div><h3>Smart Deposit Manager</h3><p>Deposit and management software.</p><span class="tagline mono">Management</span></div>
+      <div class="card proj rv"><div class="ic">🗣️</div><h3>Speak Bangla</h3><p>Web/application project.</p><span class="tagline mono">Web app</span></div>
+      <div class="card proj rv"><div class="ic">🏬</div><h3>Smart Inventory System Management</h3><p>Inventory management project.</p><span class="tagline mono">Inventory</span></div>
+      <div class="card proj rv"><div class="ic">🐝</div><h3>LandBee</h3><p>Software/application project.</p><span class="tagline mono">Software</span></div>
+      <div class="card proj rv"><div class="ic">🏫</div><h3>Smart School Management System</h3><p>School management software.</p><span class="tagline mono">Education</span></div>
+      <div class="card proj rv"><div class="ic">📝</div><h3>Automatic Question Generating System</h3><p>Automated question-generation software.</p><span class="tagline mono">Education · Automation</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="num mono">05 / education</span><h2>Education</h2></div>
+    <div class="edu">
+      <div class="card rv"><h3>B.Sc. in Engineering, CSE</h3><p>University of Information Technology &amp; Science</p><p class="mono" style="margin-top:6px;font-size:.78rem">Jan 2013 – Oct 2016</p><span class="gpa mono">GPA 3.09 / 4.00</span></div>
+      <div class="card rv"><h3>Diploma in Engineering, Computer Technology</h3><p>Feni Polytechnic Institute</p><p class="mono" style="margin-top:6px;font-size:.78rem">Jan 2007 – Dec 2012</p><span class="gpa mono">GPA 3.07 / 4.00</span></div>
+      <div class="card rv"><h3>Secondary School Certificate, Computer Science</h3><p>Feni Technical School and College</p><p class="mono" style="margin-top:6px;font-size:.78rem">Jan 2005 – Jan 2007</p><span class="gpa mono">GPA 3.82 / 5.00</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="card contact rv">
+      <span class="num mono" style="color:var(--accent);font-size:.8rem">06 / contact</span>
+      <h2>Let's work together</h2>
+      <p>Based in Feni, Chittagong, Bangladesh. Fluent in English and Bengali. Reach out about SaaS, e-commerce or ERP projects.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:tanmay.hpappu@gmail.com">tanmay.hpappu@gmail.com</a>
+        <a class="btn" href="https://github.com/TanmayHPappu" target="_blank" rel="noopener">github.com/TanmayHPappu</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="yr"></span> Tanmay Haolader · Built with plain HTML, CSS &amp; JS</div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  function stored(){try{return localStorage.getItem('theme')}catch(e){return null}}
+  function save(v){try{localStorage.setItem('theme',v)}catch(e){}}
+  var t=stored();
+  if(t==='light'||t==='dark') root.setAttribute('data-theme',t);
+  function isDark(){
+    var a=root.getAttribute('data-theme');
+    if(a) return a==='dark';
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+  document.getElementById('themeBtn').addEventListener('click',function(){
+    var next=isDark()?'light':'dark';
+    root.setAttribute('data-theme',next);
+    save(next);
+  });
+
+  var links=document.getElementById('links'), burger=document.getElementById('burger');
+  burger.addEventListener('click',function(){
+    var o=links.classList.toggle('open');
+    burger.setAttribute('aria-expanded',o);
+  });
+  links.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){links.classList.remove('open');burger.setAttribute('aria-expanded','false')}
+  });
+
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  var rv=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+    },{threshold:.12});
+    rv.forEach(function(el){io.observe(el)});
+  } else { rv.forEach(function(el){el.classList.add('in')}); }
+
+  var secs=document.querySelectorAll('main section[id]'), navA=links.querySelectorAll('a');
+  if('IntersectionObserver' in window){
+    var so=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          navA.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id)});
+        }
+      });
+    },{rootMargin:'-45% 0px -50% 0px'});
+    secs.forEach(function(s){so.observe(s)});
+  }
+})();
+</script>
+</body>
+</html>
